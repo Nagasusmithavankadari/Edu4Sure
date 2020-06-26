@@ -19,11 +19,29 @@ public class SectionsPageAdapter extends FragmentStatePagerAdapter {
         super(fm);
     }//constructor ends
 
-    public void addFragment(Fragment fragment,String title)
+  /*  public void addFragment(Fragment fragment,String title)
     {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
+    }*/
+    public void addFragment(Fragment fragment,String title,int position)
+    {
+        mFragmentList.add(position,fragment);
+        mFragmentTitleList.add(position,title);
     }
+
+    public void add(Fragment fragment,String title,int position)
+    {
+        mFragmentList.add(position,fragment);
+        mFragmentTitleList.add(position,title);
+    }
+
+    public void remove(int position) {
+        mFragmentList.remove(position);
+        mFragmentTitleList.remove(position);
+    }
+
+
 
     @Nullable
     @Override
